@@ -35,6 +35,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/homeadmin', 'Home::homeadmin');
 $routes->get('/guru', 'gurudata/Guru::index');
+$routes->get('/cabang', 'ccabang/Cabang::index');
 
 /*
  * --------------------------------------------------------------------
