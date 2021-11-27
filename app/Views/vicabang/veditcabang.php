@@ -34,41 +34,28 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>No</th>
-                    <th>Kode Cabang</th>
-                    <th>Nama Cabang</th>
-                    <th>Alamat</th>
-                    <th>Action</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <?php if($cabangs): ?>
-                    <?php foreach($cabangs as $cabang): ?>
-                        <tr>
-                    <td><?php echo $cabang['id']; ?></td>
-                    <td><?php echo $cabang['kode']; ?></td>
-                    <td><?php echo $cabang['nama']; ?></td>
-                    <td><?php echo $cabang['alamat']; ?></td>
-                    <td><a href="<?php echo base_url('edit-view/'.$cabang['id']);?>"><span style="font-size: 1em; color: blue;"><i class="fas fa-clipboard"></span></a></i>&nbsp&nbsp
-                        <a href="<?php echo base_url('edit-view/'.$cabang['id']);?>"><span style="font-size: 1em; color: orange;"><i class="fas fa-edit"></span></a></i>&nbsp&nbsp
-                        <a href="<?php echo base_url('delete/'.$cabang['id']);?>"><span style="font-size: 1em; color: Tomato;"><i class="fas fa-trash"></span></a></i></td>&nbsp&nbsp
-                  </tr>
-                    <?php endforeach; ?>
-                  <?php endif; ?>
-                  </tbody>
-                  <tfoot>
-                  <tr>
-                  <th>No</th>
-                    <th>Kode Cabang</th>
-                    <th>Nama Cabang</th>
-                    <th>Alamat</th>
-                    <th>Action</th>
-                  </tr>
-                  </tfoot>
-                </table>
+              <form form method="post" id="update_cabang" name="update_cabang" action="<?= site_url('/update') ?>">
+              <input type="hidden" name="id" id="id" value="<?php echo $cabang['id']; ?>">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="kodecabang">Kode Cabang</label>
+                    <input type="kodecabang" class="form-control"  name="kodecabang" id="kodecabang" placeholder="Kode Cabang" value="<?php echo $cabang['kode']; ?>" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="namacabang">Nama Cabang</label>
+                    <input type="text" class="form-control"  name="namacabang" id="namacabang" placeholder="Nama Cabang" value="<?php echo $cabang['nama']; ?>" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="alamatcabang">Alamat Cabang</label>
+                    <input type="text" class="form-control" name="alamatcabang"  id="alamatcabang" placeholder="Alamat Cabang" value="<?php echo $cabang['alamat']; ?>" required>
+                  </div>
+                </div>
+                <!-- /.card-body -->             
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="submit" class="btn btn-primary swalDefaultSuccessEdit">Save changes</button>
+            </div>
+            </form>
               </div>
               <!-- /.card-body -->
             </div>
@@ -115,8 +102,8 @@
                 <!-- /.card-body -->             
             </div>
             <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary swalDefaultSuccessSave">Save changes</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
             </form>
           </div>

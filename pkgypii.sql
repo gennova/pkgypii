@@ -16,6 +16,28 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`pkgypii` /*!40100 DEFAULT CHARACTER SET
 
 USE `pkgypii`;
 
+/*Table structure for table `cabang` */
+
+DROP TABLE IF EXISTS `cabang`;
+
+CREATE TABLE `cabang` (
+  `id` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `kode` varchar(10) DEFAULT NULL,
+  `nama` varchar(100) DEFAULT NULL,
+  `alamat` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `cabang` */
+
+insert  into `cabang`(`id`,`kode`,`nama`,`alamat`) values 
+(1,'C001','Jakarta','Jl. Dwiwarna Raya, mangga besar'),
+(2,'C002','Semarang','Jl. Gang Pinggir 62'),
+(3,'C003','Bandung','Jl. Kebon Jati Ciroyom'),
+(4,'C004','Kalimantan','Jl. Nansarunai'),
+(8,'kdsd','kdsds','kdsds'),
+(11,'oop','ppp','ppp');
+
 /*Table structure for table `guru` */
 
 DROP TABLE IF EXISTS `guru`;

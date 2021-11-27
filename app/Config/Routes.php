@@ -37,6 +37,14 @@ $routes->get('/homeadmin', 'Home::homeadmin');
 $routes->get('/guru', 'gurudata/Guru::index');
 $routes->get('/cabang', 'ccabang/Cabang::index');
 
+// CRUD RESTful Routes
+$routes->get('users-list', 'UserCrud::index');
+$routes->get('user-form', 'UserCrud::create');
+$routes->post('submit-form', 'ccabang/Cabang::store');
+$routes->get('edit-view/(:num)', 'ccabang\cabang::getcabangbyid/$1');
+$routes->post('update', 'ccabang/Cabang::update');
+$routes->get('delete/(:num)', 'ccabang\cabang::delete/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
