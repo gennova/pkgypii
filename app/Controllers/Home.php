@@ -34,7 +34,7 @@ class Home extends BaseController
         log_message('info', 'User try login '.$username.' '.$password);
         $data = $model->where('username', $username)->first();
         if($data){
-            $datapass = $model->where('PASSWORD=PASSWORD("'.$password.'")')->first();
+            $datapass = $model->where('password=md5("'.$password.'")')->first();
             //$pass = $data['password'];
             //$verify_pass = password_verify($password, $pass);
             if($datapass){

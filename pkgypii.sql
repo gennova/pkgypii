@@ -52,12 +52,12 @@ CREATE TABLE `guru` (
   `password` varchar(200) DEFAULT NULL,
   `create` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `guru` */
 
 insert  into `guru`(`id`,`namaguru`,`idcabang`,`idunit`,`level`,`username`,`password`,`create`) values 
-(1,'tendy',1,1,'admin','admin','*4ACFE3202A5FF5CF467898FC58AAB1D615029441','2021-11-28 13:50:46');
+(1,'tendy123',12,1,'admin','admin','0192023a7bbd73250516f069df18b500','2021-11-28 21:32:26');
 
 /*Table structure for table `mapel` */
 

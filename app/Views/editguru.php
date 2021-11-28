@@ -38,22 +38,23 @@
   <!-- /.login-logo -->
   <div class="card" >
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Register Login / Add Data Guru</p>
+      <p class="login-box-msg">Edit Login / Add Data Guru</p>
       <?php if(session()->getFlashdata('msg')):?>
                 <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
                 <?php endif;?>
-      <form id="quickForm" method="post" id="add_create" name="add_create" action="<?= base_url('/addguru') ?>">
+      <form id="quickForm" method="post" id="add_create" name="add_create" action="<?= base_url('/updateguru') ?>">
+      <input type="hidden" name="id" id="id" value="<?php echo $guru['id']; ?>">
       <div class="form-group">
                     <label for="namaguru">Nama Lengkap Guru</label>
-                    <input type="text" name="namaguru" class="form-control" id="namaguru" placeholder="Nama Lengkap guru" required>
+                    <input type="text" name="namaguru" class="form-control" id="namaguru" value="<?php echo $guru['namaguru']; ?>" placeholder="Nama Lengkap guru" required>
                   </div>
       <div class="form-group">
                     <label for="exampleInputEmail1">Username/Email address</label>
-                    <input type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="text" name="username" class="form-control" id="exampleInputEmail1" value="<?php echo $guru['username']; ?>" placeholder="Enter email">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" value="" placeholder="Password">
         </div>
         <div class="form-group">
                   <label>Cabang</label>

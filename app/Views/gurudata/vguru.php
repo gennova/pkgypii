@@ -49,14 +49,14 @@
                   <?php if($gurus): ?>
                     <?php foreach($gurus as $guru): ?>
                         <tr>
-                    <td><?php echo $guru['id']; ?></td>
+                    <td><?php echo $guru['idguru']; ?></td>
                     <td><?php echo $guru['namaguru']; ?></td>
                     <td><?php echo $guru['nama']; ?></td>
                     <td><?php echo $guru['namaunit']; ?></td>
                     <td><?php echo $guru['level']; ?></td>
-                    <td><a href="<?php echo base_url('editguru/'.$guru['id']);?>"><span style="font-size: 1em; color: blue;"><i class="fas fa-clipboard"></span></a></i>&nbsp&nbsp
-                        <a href="<?php echo base_url('editguru/'.$guru['id']);?>"><span style="font-size: 1em; color: orange;"><i class="fas fa-edit"></span></a></i>&nbsp&nbsp
-                        <a href="<?php echo base_url('deleteguru/'.$guru['id']);?>"><span style="font-size: 1em; color: Tomato;"><i class="fas fa-trash"></span></a></i></td>&nbsp&nbsp
+                    <td><a href="<?php echo base_url('editguru/'.$guru['idguru']);?>"><span style="font-size: 1em; color: blue;"><i class="fas fa-clipboard"></span></a></i>&nbsp&nbsp
+                        <a href="<?php echo base_url('editguru/'.$guru['idguru']);?>"><span style="font-size: 1em; color: orange;"><i class="fas fa-edit"></span></a></i>&nbsp&nbsp
+                        <a href="<?php echo base_url('deleteguru/'.$guru['idguru']);?>"><span style="font-size: 1em; color: Tomato;"><i class="fas fa-trash"></span></a></i></td>&nbsp&nbsp
                   </tr>
                     <?php endforeach; ?>
                   <?php endif; ?>

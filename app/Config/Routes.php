@@ -54,6 +54,12 @@ $routes->get('editunit/(:num)', 'cunit\Unit::getUnitById/$1');
 $routes->post('updateunit', 'cunit/Unit::update');
 $routes->get('deleteunit/(:num)', 'cunit\Unit::delete/$1');
 
+//route guru
+$routes->post('/addguru', 'gurudata/Guru::store');
+$routes->get('editguru/(:num)', 'gurudata\Guru::getGuruById/$1');
+$routes->post('updateguru', 'gurudata/Guru::update');
+$routes->get('deleteguru/(:num)', 'gurudata\Guru::delete/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
