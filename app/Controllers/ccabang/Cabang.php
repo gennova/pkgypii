@@ -57,5 +57,4 @@ class Cabang extends BaseController
         $data['cabang'] = $m_cabang->where('id', $id)->delete($id);
         return $this->response->redirect(site_url('/cabang'));
     }    
-
 }

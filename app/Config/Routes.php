@@ -33,9 +33,11 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
+$routes->get('/register', 'Home::register');
 $routes->get('/homeadmin', 'Home::homeadmin');
 $routes->get('/guru', 'gurudata/Guru::index');
 $routes->get('/cabang', 'ccabang/Cabang::index');
+$routes->get('/cabanglist', 'ccabang/Cabang::daftar_cabang');
 
 // CRUD RESTful Routes
 $routes->get('users-list', 'UserCrud::index');
