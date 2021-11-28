@@ -26,7 +26,7 @@ CREATE TABLE `cabang` (
   `nama` varchar(100) DEFAULT NULL,
   `alamat` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `cabang` */
 
@@ -35,8 +35,8 @@ insert  into `cabang`(`id`,`kode`,`nama`,`alamat`) values
 (2,'C002','Semarang','Jl. Gang Pinggir 62'),
 (3,'C003','Bandung','Jl. Kebon Jati Ciroyom'),
 (4,'C004','Kalimantan','Jl. Nansarunai'),
-(8,'kdsd','kdsds','kdsds'),
-(11,'oop','ppp','ppp');
+(8,'C007','Surabaya','Jawa Timur'),
+(12,'C0005','Kupang','Timor NTT');
 
 /*Table structure for table `guru` */
 
@@ -57,6 +57,38 @@ CREATE TABLE `guru` (
 
 insert  into `guru`(`id`,`namaguru`,`idcabang`,`idunit`,`level`,`username`,`password`) values 
 (1,'tendy',1,1,'admin','admin','admin');
+
+/*Table structure for table `mapel` */
+
+DROP TABLE IF EXISTS `mapel`;
+
+CREATE TABLE `mapel` (
+  `id` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `namamapel` varchar(100) NOT NULL,
+  `jenjang` enum('KB/TK','SD','SMP','SMA') NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `mapel` */
+
+/*Table structure for table `unit` */
+
+DROP TABLE IF EXISTS `unit`;
+
+CREATE TABLE `unit` (
+  `id` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `kodeunit` varchar(20) NOT NULL,
+  `namaunit` varchar(100) NOT NULL,
+  `alamatunit` varchar(200) DEFAULT NULL,
+  `telpon` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `unit` */
+
+insert  into `unit`(`id`,`kodeunit`,`namaunit`,`alamatunit`,`telpon`,`email`) values 
+(1,'U0001','TK Sinar Matahari','Jl. Gang Pinggir','q','q@yahoo.com');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

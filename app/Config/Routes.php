@@ -45,6 +45,13 @@ $routes->get('edit-view/(:num)', 'ccabang\cabang::getcabangbyid/$1');
 $routes->post('update', 'ccabang/Cabang::update');
 $routes->get('delete/(:num)', 'ccabang\cabang::delete/$1');
 
+//route unit
+$routes->get('/unit','cunit/Unit::index');
+$routes->post('saveunit', 'cunit/Unit::store');
+$routes->get('editunit/(:num)', 'cunit\Unit::getUnitById/$1');
+$routes->post('updateunit', 'cunit/Unit::update');
+$routes->get('deleteunit/(:num)', 'cunit\Unit::delete/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

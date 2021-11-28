@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Log in</title>
+  <title>PKG YPII</title>
 
   
   <!-- Google Font: Source Sans Pro -->
@@ -33,14 +33,14 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <a href="<?php echo base_url();?>"><b>PKG 2021</b>YPII Pusat</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
       <?php if(session()->getFlashdata('msg')):?>
-                    <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
+                <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
                 <?php endif;?>
       <form action="/home/auth" method="post">
         <div class="input-group mb-3">
@@ -59,18 +59,6 @@
             </div>
           </div>
         </div>
-		<div class="form-group">
-                  <label>Minimal</label>
-                  <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                  </select>
-                </div>
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">

@@ -45,7 +45,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo base_url('/guru');?>" class="nav-link active">
+                <a href="<?php echo base_url('/guru');?>" class="nav-link" onclick="this.className='nav-link active'">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Guru</p>
                 </a>
@@ -57,7 +57,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="<?php echo base_url('/unit');?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Unit</p>
                 </a>

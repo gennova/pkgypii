@@ -9,12 +9,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Master Data Cabang <?php echo password_verify('log_password',PASSWORD_BCRYPT);?></h1>
+            <h1 class="m-0">Master Data Unit</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item active">Unit</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -38,23 +38,27 @@
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>Kode Cabang</th>
-                    <th>Nama Cabang</th>
+                    <th>Kode Unit</th>
+                    <th>Nama Unit</th>
                     <th>Alamat</th>
+                    <th>Telpon</th>
+                    <th>Email</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <?php if($cabangs): ?>
-                    <?php foreach($cabangs as $cabang): ?>
+                  <?php if($units): ?>
+                    <?php foreach($units as $unit): ?>
                         <tr>
-                    <td><?php echo $cabang['id']; ?></td>
-                    <td><?php echo $cabang['kode']; ?></td>
-                    <td><?php echo $cabang['nama']; ?></td>
-                    <td><?php echo $cabang['alamat']; ?></td>
-                    <td><a href="<?php echo base_url('edit-view/'.$cabang['id']);?>"><span style="font-size: 1em; color: blue;"><i class="fas fa-clipboard"></span></a></i>&nbsp&nbsp
-                        <a href="<?php echo base_url('edit-view/'.$cabang['id']);?>"><span style="font-size: 1em; color: orange;"><i class="fas fa-edit"></span></a></i>&nbsp&nbsp
-                        <a href="<?php echo base_url('delete/'.$cabang['id']);?>"><span style="font-size: 1em; color: Tomato;"><i class="fas fa-trash"></span></a></i></td>&nbsp&nbsp
+                    <td><?php echo $unit['id']; ?></td>
+                    <td><?php echo $unit['kodeunit']; ?></td>
+                    <td><?php echo $unit['namaunit']; ?></td>
+                    <td><?php echo $unit['alamatunit']; ?></td>
+                    <td><?php echo $unit['telpon']; ?></td>
+                    <td><?php echo $unit['email']; ?></td>
+                    <td><a href="<?php echo base_url('editunit/'.$unit['id']);?>"><span style="font-size: 1em; color: blue;"><i class="fas fa-clipboard"></span></a></i>&nbsp&nbsp
+                        <a href="<?php echo base_url('editunit/'.$unit['id']);?>"><span style="font-size: 1em; color: orange;"><i class="fas fa-edit"></span></a></i>&nbsp&nbsp
+                        <a href="<?php echo base_url('deleteunit/'.$unit['id']);?>"><span style="font-size: 1em; color: Tomato;"><i class="fas fa-trash"></span></a></i></td>&nbsp&nbsp
                   </tr>
                     <?php endforeach; ?>
                   <?php endif; ?>
@@ -62,9 +66,11 @@
                   <tfoot>
                   <tr>
                   <th>No</th>
-                    <th>Kode Cabang</th>
-                    <th>Nama Cabang</th>
+                    <th>Kode Unit</th>
+                    <th>Nama Unit</th>
                     <th>Alamat</th>
+                    <th>Telpon</th>
+                    <th>Email</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>
@@ -91,25 +97,33 @@
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Tambah Cabang</h4>
+              <h4 class="modal-title">Tambah Unit</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-            <form method="post" id="add_create" name="add_create" action="<?= base_url('/submit-form') ?>">
+            <form method="post" id="add_create" name="add_create" action="<?= base_url('/saveunit') ?>">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="kodecabang">Kode Cabang</label>
-                    <input type="kodecabang" class="form-control"  name="kodecabang" id="kodecabang" placeholder="Kode Cabang" required>
+                    <label for="kodeunit">Kode Cabang</label>
+                    <input type="kodeunit" class="form-control"  name="kodeunit" id="kodeunit" placeholder="Kode Unit" required>
                   </div>
                   <div class="form-group">
-                    <label for="namacabang">Nama Cabang</label>
-                    <input type="text" class="form-control"  name="namacabang" id="namacabang" placeholder="Nama Cabang" required>
+                    <label for="namaunit">Nama Cabang</label>
+                    <input type="text" class="form-control"  name="namaunit" id="namaunit" placeholder="Nama Unit" required>
                   </div>
                   <div class="form-group">
-                    <label for="alamatcabang">Alamat Cabang</label>
-                    <input type="text" class="form-control" name="alamatcabang"  id="alamatcabang" placeholder="Alamat Cabang" required>
+                    <label for="alamatunit">Alamat Cabang</label>
+                    <input type="text" class="form-control" name="alamatunit"  id="alamatunit" placeholder="Alamat Unit" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="telpon">Telpon</label>
+                    <input type="text" class="form-control" name="telpon"  id="telpon" placeholder="Telpon" >
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email"  id="email" placeholder="Email Unit" >
                   </div>
                 </div>
                 <!-- /.card-body -->             

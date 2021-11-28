@@ -9,12 +9,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Master Data Cabang <?php echo password_verify('log_password',PASSWORD_BCRYPT);?></h1>
+            <h1 class="m-0">Master Data Unit</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item active">Unit</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -34,41 +34,36 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>No</th>
-                    <th>Kode Cabang</th>
-                    <th>Nama Cabang</th>
-                    <th>Alamat</th>
-                    <th>Action</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <?php if($cabangs): ?>
-                    <?php foreach($cabangs as $cabang): ?>
-                        <tr>
-                    <td><?php echo $cabang['id']; ?></td>
-                    <td><?php echo $cabang['kode']; ?></td>
-                    <td><?php echo $cabang['nama']; ?></td>
-                    <td><?php echo $cabang['alamat']; ?></td>
-                    <td><a href="<?php echo base_url('edit-view/'.$cabang['id']);?>"><span style="font-size: 1em; color: blue;"><i class="fas fa-clipboard"></span></a></i>&nbsp&nbsp
-                        <a href="<?php echo base_url('edit-view/'.$cabang['id']);?>"><span style="font-size: 1em; color: orange;"><i class="fas fa-edit"></span></a></i>&nbsp&nbsp
-                        <a href="<?php echo base_url('delete/'.$cabang['id']);?>"><span style="font-size: 1em; color: Tomato;"><i class="fas fa-trash"></span></a></i></td>&nbsp&nbsp
-                  </tr>
-                    <?php endforeach; ?>
-                  <?php endif; ?>
-                  </tbody>
-                  <tfoot>
-                  <tr>
-                  <th>No</th>
-                    <th>Kode Cabang</th>
-                    <th>Nama Cabang</th>
-                    <th>Alamat</th>
-                    <th>Action</th>
-                  </tr>
-                  </tfoot>
-                </table>
+              <form form method="post" id="update_unit" name="update_unit" action="<?= site_url('/updateunit') ?>">
+              <input type="hidden" name="id" id="id" value="<?php echo $unit['id']; ?>">
+                <div class="card-body">
+                <div class="form-group">
+                    <label for="kodeunit">Kode Cabang</label>
+                    <input type="kodeunit" class="form-control"  name="kodeunit" id="kodeunit" value="<?php echo $unit['kodeunit']; ?>" placeholder="Kode Unit" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="namaunit">Nama Cabang</label>
+                    <input type="text" class="form-control"  name="namaunit" id="namaunit" value="<?php echo $unit['namaunit']; ?>" placeholder="Nama Unit" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="alamatunit">Alamat Cabang</label>
+                    <input type="text" class="form-control" name="alamatunit"  id="alamatunit" value="<?php echo $unit['alamatunit']; ?>" placeholder="Alamat Unit" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="telpon">Telpon</label>
+                    <input type="text" class="form-control" name="telpon"  id="telpon" value="<?php echo $unit['telpon']; ?>" placeholder="Telpon" >
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email"  id="email" value="<?php echo $unit['email']; ?>" placeholder="Email Unit" >
+                  </div>
+                </div>
+                <!-- /.card-body -->             
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="submit" class="btn btn-primary swalDefaultSuccessEdit">Save changes</button>
+            </div>
+            </form>
               </div>
               <!-- /.card-body -->
             </div>
@@ -115,8 +110,8 @@
                 <!-- /.card-body -->             
             </div>
             <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary swalDefaultSuccessSave">Save changes</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
             </form>
           </div>
