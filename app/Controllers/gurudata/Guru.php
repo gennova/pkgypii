@@ -22,6 +22,7 @@ class Guru extends BaseController
 
     // insert data
     public function store() {
+        log_message('info', session()->get('namaguru').' User add data guru');
         $m_guru = new GuruModel();
         $data = [
             'namaguru' => $this->request->getVar('namaguru'),

@@ -32,6 +32,8 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->setAutoRoute(true);
+$routes->get('/pdf', 'Pdf::index');
+$routes->get('/fpdf', 'Pdf::fpdf2');
 $routes->get('/', 'Home::index');
 $routes->get('/register', 'Home::register');
 $routes->get('/homeadmin', 'Home::homeadmin');
